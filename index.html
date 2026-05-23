@@ -1373,7 +1373,7 @@ TEMPO RESTANTE
 
 <button
 class="popup-btn"
-onclick="window.location.href='https://SEU-LINK-AQUI.com'"
+onclick="window.location.href='https://promo-desafioemagrecimento.vercel.app'"
 >
 VER OFERTA AGORA
 </button>
@@ -1386,6 +1386,81 @@ Mais de 130 mil mulheres já participaram.
 
 </div>
 
+<script>
 
+let popupShown = false;
+
+history.pushState(null, null, location.href);
+
+window.addEventListener("popstate", function () {
+
+if(popupShown) return;
+
+popupShown = true;
+
+document.getElementById("exitPopup")
+.style.display = "flex";
+
+startCountdown();
+
+history.pushState(null, null, location.href);
+
+});
+
+function closePopup(){
+
+document.getElementById("exitPopup")
+.style.display = "none";
+
+}
+
+let time = 300;
+let timerStarted = false;
+
+function startCountdown(){
+
+if(timerStarted) return;
+
+timerStarted = true;
+
+const timer =
+document.getElementById("countdown");
+
+const interval = setInterval(()=>{
+
+let minutes =
+Math.floor(time / 60);
+
+let seconds =
+time % 60;
+
+minutes =
+minutes < 10
+? "0" + minutes
+: minutes;
+
+seconds =
+seconds < 10
+? "0" + seconds
+: seconds;
+
+timer.innerHTML =
+minutes + ":" + seconds;
+
+time--;
+
+if(time < 0){
+
+clearInterval(interval);
+
+timer.innerHTML = "00:00";
+
+}
+
+},1000);
+
+}
+
+</script>
 </body>
 </html>
