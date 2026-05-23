@@ -14,320 +14,305 @@
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-  background:
-  linear-gradient(
-  180deg,
-  #fff0f5 0%,
-  #ffe4ec 100%);
-  min-height:100vh;
-  overflow-x:hidden;
-}
+background:
+linear-gradient(
+180deg,
+#fff0f5 0%,
+#ffe4ec 100%);
 
-body::before{
-  content:"";
-  position:fixed;
-  width:400px;
-  height:400px;
-  background:#ffb6d5;
-  filter:blur(120px);
-  top:-100px;
-  left:-100px;
-  opacity:.4;
-  z-index:-1;
-}
-
-body::after{
-  content:"";
-  position:fixed;
-  width:400px;
-  height:400px;
-  background:#ffc4dd;
-  filter:blur(120px);
-  bottom:-100px;
-  right:-100px;
-  opacity:.4;
-  z-index:-1;
-}
-
-.topbar{
-  background:
-  linear-gradient(
-  90deg,
-  #ec4899,
-  #f43f5e);
-
-  color:white;
-  text-align:center;
-  padding:14px;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:1px;
+min-height:100vh;
+overflow-x:hidden;
+padding:15px;
 }
 
 .container{
-  width:100%;
-  max-width:430px;
-  margin:auto;
-  padding:15px;
+width:100%;
+max-width:430px;
+margin:auto;
 }
 
 .card{
-  background:white;
-  border-radius:32px;
-  padding:22px;
-  box-shadow:
-  0 15px 50px rgba(244,63,94,.18);
 
-  position:relative;
-  overflow:hidden;
+background:white;
+
+border-radius:30px;
+
+padding:22px;
+
+box-shadow:
+0 15px 45px rgba(236,72,153,.15);
+
+overflow:hidden;
+position:relative;
 }
 
 .progress-wrapper{
-  width:100%;
-  height:12px;
-  background:#ffe4ec;
-  border-radius:999px;
-  overflow:hidden;
-  margin-bottom:24px;
+width:100%;
+height:12px;
+background:#ffe4ec;
+border-radius:999px;
+overflow:hidden;
+margin-bottom:25px;
 }
 
 .progress{
-  width:0%;
-  height:100%;
-  border-radius:999px;
-  background:
-  linear-gradient(
-  90deg,
-  #ec4899,
-  #fb7185);
+width:0%;
+height:100%;
+background:
+linear-gradient(
+90deg,
+#ec4899,
+#fb7185);
 
-  transition:.4s;
+transition:.4s;
 }
 
 .question{
-  display:none;
-  animation:fade .4s ease;
+display:none;
+animation:fade .4s ease;
 }
 
 .question.active{
-  display:block;
+display:block;
 }
 
 .badge{
-  display:inline-block;
-  background:#ffe4ec;
-  color:#e11d48;
-  padding:8px 16px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:18px;
+display:inline-block;
+
+background:#ffe4ec;
+color:#e11d48;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+font-size:12px;
+font-weight:700;
+
+margin-bottom:18px;
 }
 
 h1{
-  font-size:31px;
-  line-height:1.2;
-  margin-bottom:16px;
-  color:#111827;
-  font-weight:800;
+font-size:28px;
+line-height:1.25;
+margin-bottom:16px;
+color:#111827;
+font-weight:800;
 }
 
 p{
-  font-size:15px;
-  color:#6b7280;
-  line-height:1.7;
-  margin-bottom:18px;
+font-size:15px;
+line-height:1.7;
+color:#6b7280;
+margin-bottom:18px;
 }
 
 .hero{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:26px;
-  margin-bottom:24px;
-
-  box-shadow:
-  0 10px 35px rgba(0,0,0,.08);
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:22px;
+margin-bottom:24px;
 }
 
 .question-image{
-  width:100%;
-  height:135px;
-  object-fit:cover;
-  border-radius:22px;
-  margin-bottom:18px;
-
-  box-shadow:
-  0 8px 25px rgba(0,0,0,.06);
-
-  transition:.3s;
-}
-
-.question-image:hover{
-  transform:scale(1.02);
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:18px;
 }
 
 .btn{
-  width:100%;
-  border:none;
+width:100%;
+border:none;
 
-  background:
-  linear-gradient(
-  90deg,
-  #ec4899,
-  #f43f5e);
+background:
+linear-gradient(
+90deg,
+#ec4899,
+#f43f5e);
 
-  color:white;
-  padding:16px;
-  border-radius:18px;
-  margin-bottom:14px;
-  font-size:15px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.25s;
+color:white;
 
-  box-shadow:
-  0 12px 28px rgba(244,63,94,.28);
+padding:16px;
+
+border-radius:18px;
+
+font-size:15px;
+font-weight:700;
+
+margin-bottom:14px;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+0 12px 30px rgba(244,63,94,.25);
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+transform:translateY(-2px);
 }
 
-.btn:active{
-  transform:scale(.98);
+.option{
+background:#fff5f7;
+border:2px solid #ffe4ec;
+padding:18px;
+border-radius:20px;
+margin-bottom:14px;
+cursor:pointer;
+transition:.25s;
+font-weight:600;
+}
+
+.option:hover{
+border-color:#ec4899;
+transform:scale(1.02);
+}
+
+.input{
+width:100%;
+padding:16px;
+border-radius:16px;
+border:2px solid #ffe4ec;
+margin-bottom:14px;
+font-size:15px;
+outline:none;
 }
 
 .loading{
-  display:none;
-  text-align:center;
-  padding:40px 0;
+display:none;
+text-align:center;
+padding:40px 0;
 }
 
 .spinner{
-  width:75px;
-  height:75px;
-  border-radius:50%;
-
-  border:7px solid #ffe4ec;
-  border-top:7px solid #ec4899;
-
-  margin:auto;
-
-  animation:spin 1s linear infinite;
-}
-
-.loading h1{
-  margin-top:25px;
-  font-size:25px;
+width:75px;
+height:75px;
+border-radius:50%;
+border:7px solid #ffe4ec;
+border-top:7px solid #ec4899;
+margin:auto;
+animation:spin 1s linear infinite;
 }
 
 .result{
-  display:none;
-  text-align:center;
-  animation:fade .5s ease;
+display:none;
+animation:fade .5s ease;
 }
 
 .result-box{
-  background:
-  linear-gradient(
-  180deg,
-  #fff1f2,
-  #ffe4ec);
+background:
+linear-gradient(
+180deg,
+#fff1f2,
+#ffe4ec);
 
-  border:2px solid #fecdd3;
+border:2px solid #fecdd3;
 
-  padding:30px;
-  border-radius:28px;
-  margin:25px 0;
+padding:25px;
+border-radius:25px;
+margin:25px 0;
+text-align:center;
 }
 
 .result-number{
-  font-size:64px;
-  font-weight:800;
-  color:#e11d48;
-  margin-bottom:10px;
+font-size:56px;
+font-weight:800;
+color:#e11d48;
+margin-bottom:10px;
 }
 
-.cta{
-  background:
-  linear-gradient(
-  90deg,
-  #dc2626,
-  #fb7185);
+.before-after{
+width:100%;
+border-radius:22px;
+margin:20px 0;
+}
+
+.warning{
+background:#fff1f2;
+border:2px solid #fecdd3;
+padding:16px;
+border-radius:18px;
+margin-bottom:18px;
+font-weight:600;
+color:#be123c;
 }
 
 .pulse{
-  animation:pulse 1.8s infinite;
+animation:pulse 1.8s infinite;
 }
 
-.floating{
-  animation:floating 3s ease-in-out infinite;
+.center{
+text-align:center;
 }
 
 @keyframes spin{
-  to{
-    transform:rotate(360deg);
-  }
+to{
+transform:rotate(360deg);
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @keyframes pulse{
 
-  0%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.03);
-  }
-
-  100%{
-    transform:scale(1);
-  }
+0%{
+transform:scale(1);
 }
 
-@keyframes floating{
-
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-6px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
+50%{
+transform:scale(1.03);
 }
 
-@keyframes fade{
+100%{
+transform:scale(1);
+}
 
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
+}
 
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+@media(max-width:480px){
+
+.card{
+padding:18px;
+border-radius:24px;
+}
+
+h1{
+font-size:25px;
+}
+
+.hero{
+height:200px;
+}
+
+.question-image{
+height:110px;
+}
+
 }
 
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  TESTE FEMININO • RESULTADO GRATUITO E IMEDIATO
-</div>
 
 <div class="container">
 
@@ -342,7 +327,7 @@ p{
 <div class="question active">
 
 <div class="badge">
-  TESTE MÉDICO RÁPIDO
+TESTE METABÓLICO FEMININO
 </div>
 
 <h1>
@@ -370,178 +355,612 @@ QUERO DESCOBRIR
 
 </div>
 
-<!-- PERGUNTAS -->
+<!-- 1 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
-<h1>Qual sua faixa etária?</h1>
-<button class="btn" onclick="nextQuestion()">18-25 anos</button>
-<button class="btn" onclick="nextQuestion()">26-35 anos</button>
-<button class="btn" onclick="nextQuestion()">36-45 anos</button>
-<button class="btn" onclick="nextQuestion()">46+ anos</button>
+
+<h1>
+Qual sua idade?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+De 18 a 29 anos
 </div>
+
+<div class="option" onclick="nextQuestion()">
+De 30 a 39 anos
+</div>
+
+<div class="option" onclick="nextQuestion()">
+De 40 a 49 anos
+</div>
+
+<div class="option" onclick="nextQuestion()">
+De 50 a 59 anos
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Mais de 60
+</div>
+
+</div>
+
+<!-- 2 -->
+
+<div class="question center">
+
+<img
+class="hero"
+src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop"
+>
+
+<h1>
+Mais de 184.900 mulheres já participaram
+</h1>
+
+<p>
+Mulheres reativaram seus metabolismos e transformaram suas vidas com o desafio.
+</p>
+
+<button class="btn pulse" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
+</div>
+
+<!-- 3 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop">
-<h1>Você sente dificuldade para emagrecer?</h1>
-<button class="btn" onclick="nextQuestion()">Muita</button>
-<button class="btn" onclick="nextQuestion()">Pouca</button>
-<button class="btn" onclick="nextQuestion()">Nenhuma</button>
+
+<h1>
+Sua altura
+</h1>
+
+<input class="input" placeholder="Ex: 165cm">
+
+<button class="btn" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
 </div>
+
+<!-- 4 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop">
-<h1>Você pratica exercícios físicos?</h1>
-<button class="btn" onclick="nextQuestion()">Todos os dias</button>
-<button class="btn" onclick="nextQuestion()">3x por semana</button>
-<button class="btn" onclick="nextQuestion()">Raramente</button>
-<button class="btn" onclick="nextQuestion()">Nunca</button>
+
+<h1>
+Peso atual
+</h1>
+
+<input class="input" placeholder="Ex: 72kg">
+
+<button class="btn" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
 </div>
+
+<!-- 5 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop">
-<h1>Como é sua alimentação?</h1>
-<button class="btn" onclick="nextQuestion()">Muito saudável</button>
-<button class="btn" onclick="nextQuestion()">Normal</button>
-<button class="btn" onclick="nextQuestion()">Ruim</button>
+
+<h1>
+Como você descreveria sua barriga hoje?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Barriga plana ou quase plana
 </div>
+
+<div class="option" onclick="nextQuestion()">
+Um pouco de barriga
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Barriga saliente
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Barriga muito grande
+</div>
+
+</div>
+
+<!-- 6 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1200&auto=format&fit=crop">
-<h1>Você dorme bem?</h1>
-<button class="btn" onclick="nextQuestion()">Sim</button>
-<button class="btn" onclick="nextQuestion()">Mais ou menos</button>
-<button class="btn" onclick="nextQuestion()">Não</button>
+
+<h1>
+Quantas vezes perdeu peso e recuperou?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+😞 1 a 2 vezes
 </div>
+
+<div class="option" onclick="nextQuestion()">
+😢 3 a 5 vezes
+</div>
+
+<div class="option" onclick="nextQuestion()">
+🥹 5 a 8 vezes
+</div>
+
+<div class="option" onclick="nextQuestion()">
+😭 Perdi as contas
+</div>
+
+</div>
+
+<!-- 7 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
-<h1>Você sente vontade de comer doces?</h1>
-<button class="btn" onclick="nextQuestion()">Todos os dias</button>
-<button class="btn" onclick="nextQuestion()">Às vezes</button>
-<button class="btn" onclick="nextQuestion()">Quase nunca</button>
+
+<h1>
+Nos últimos 2 anos, o que aconteceu com seu peso?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Engordei até 5kg
 </div>
+
+<div class="option" onclick="nextQuestion()">
+Entre 5kg e 10kg
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Entre 11kg e 15kg
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Mais de 15kg
+</div>
+
+</div>
+
+<!-- 8 -->
+
+<div class="question center">
+
+<h1>
+Você não está sozinha 💖
+</h1>
+
+<p>
+Mais de 500 mil mulheres passaram pelo mesmo problema e conseguiram reduzir suas idades metabólicas.
+</p>
+
+<p>
+👉 Você também irá conseguir.
+</p>
+
+<button class="btn pulse" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
+</div>
+
+<!-- 9 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200&auto=format&fit=crop">
-<h1>Você consome fast food?</h1>
-<button class="btn" onclick="nextQuestion()">Frequentemente</button>
-<button class="btn" onclick="nextQuestion()">Às vezes</button>
-<button class="btn" onclick="nextQuestion()">Nunca</button>
+
+<h1>
+Como se sente depois de comer pão, massa ou arroz?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Normal
 </div>
+
+<div class="option" onclick="nextQuestion()">
+Sonolência leve
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Muito sono
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Sono extremo + fome
+</div>
+
+</div>
+
+<!-- 10 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
-<h1>Você sente estresse frequente?</h1>
-<button class="btn" onclick="nextQuestion()">Muito</button>
-<button class="btn" onclick="nextQuestion()">Moderado</button>
-<button class="btn" onclick="nextQuestion()">Pouco</button>
+
+<h1>
+Você sente vontade intensa de doces?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Raramente
 </div>
+
+<div class="option" onclick="nextQuestion()">
+Às vezes
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Quase todo dia
+</div>
+
+<div class="option" onclick="nextQuestion()">
+É incontrolável
+</div>
+
+</div>
+
+<!-- 11 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
-<h1>Você bebe água regularmente?</h1>
-<button class="btn" onclick="nextQuestion()">Muita água</button>
-<button class="btn" onclick="nextQuestion()">Pouca</button>
-<button class="btn" onclick="nextQuestion()">Quase nada</button>
+
+<h1>
+Você tem escurecimento na pele?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Não
 </div>
+
+<div class="option" onclick="nextQuestion()">
+Leve
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Visível
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Intenso
+</div>
+
+</div>
+
+<!-- 12 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200&auto=format&fit=crop">
-<h1>Você costuma comer tarde da noite?</h1>
-<button class="btn" onclick="nextQuestion()">Sempre</button>
-<button class="btn" onclick="nextQuestion()">Às vezes</button>
-<button class="btn" onclick="nextQuestion()">Nunca</button>
+
+<h1>
+Como está seu nível de estresse?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Tranquilo
 </div>
 
-<!-- MAIS PERGUNTAS -->
+<div class="option" onclick="nextQuestion()">
+Moderado
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Alto
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Extremo
+</div>
+
+</div>
+
+<!-- 13 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
-<h1>Você sente retenção de líquido?</h1>
-<button class="btn" onclick="nextQuestion()">Sim</button>
-<button class="btn" onclick="nextQuestion()">Às vezes</button>
-<button class="btn" onclick="nextQuestion()">Não</button>
+
+<h1>
+Como é a qualidade do seu sono?
+</h1>
+
+<div class="option" onclick="nextQuestion()">
+Durmo bem
 </div>
+
+<div class="option" onclick="nextQuestion()">
+Razoável
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Sono ruim
+</div>
+
+<div class="option" onclick="nextQuestion()">
+Insônia frequente
+</div>
+
+</div>
+
+<!-- 14 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1200&auto=format&fit=crop">
-<h1>Você gostaria de acelerar seu metabolismo?</h1>
-<button class="btn" onclick="nextQuestion()">Muito</button>
-<button class="btn" onclick="nextQuestion()">Sim</button>
-<button class="btn" onclick="nextQuestion()">Pouco</button>
+
+<h1>
+Onde mais deseja perder gordura?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Barriga</div>
+<div class="option" onclick="nextQuestion()">Braços</div>
+<div class="option" onclick="nextQuestion()">Costas</div>
+<div class="option" onclick="nextQuestion()">Culotes</div>
+<div class="option" onclick="nextQuestion()">Pernas</div>
+
 </div>
+
+<!-- 15 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
-<h1>Você está satisfeita com seu corpo?</h1>
-<button class="btn" onclick="nextQuestion()">Sim</button>
-<button class="btn" onclick="nextQuestion()">Mais ou menos</button>
-<button class="btn" onclick="nextQuestion()">Não</button>
+
+<h1>
+Como avalia sua pele?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Pele firme</div>
+<div class="option" onclick="nextQuestion()">Perda leve</div>
+<div class="option" onclick="nextQuestion()">Flacidez visível</div>
+<div class="option" onclick="nextQuestion()">Flacidez intensa</div>
+
 </div>
+
+<!-- 16 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop">
-<h1>Você sente cansaço frequente?</h1>
-<button class="btn" onclick="nextQuestion()">Sempre</button>
-<button class="btn" onclick="nextQuestion()">Às vezes</button>
-<button class="btn" onclick="nextQuestion()">Nunca</button>
+
+<h1>
+Você sente que aparenta mais idade?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Não</div>
+<div class="option" onclick="nextQuestion()">Minha idade</div>
+<div class="option" onclick="nextQuestion()">3-5 anos a mais</div>
+<div class="option" onclick="nextQuestion()">Mais de 5 anos</div>
+
 </div>
+
+<!-- 17 -->
 
 <div class="question">
-<img class="question-image floating" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
-<h1>Você sente inchaço corporal?</h1>
-<button class="btn" onclick="nextQuestion()">Frequentemente</button>
-<button class="btn" onclick="nextQuestion()">Às vezes</button>
-<button class="btn" onclick="nextQuestion()">Nunca</button>
+
+<h1>
+Como está seu intestino?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Funciona bem</div>
+<div class="option" onclick="nextQuestion()">1-2 dias sem ir</div>
+<div class="option" onclick="nextQuestion()">Preso frequentemente</div>
+<div class="option" onclick="nextQuestion()">Muito desregulado</div>
+
 </div>
 
-<!-- RESULTADO -->
+<!-- 18 -->
+
+<div class="question">
+
+<h1>
+Qual o tipo do seu cocô? 💩
+</h1>
+
+<div class="option" onclick="nextQuestion()">Tipo 01</div>
+<div class="option" onclick="nextQuestion()">Tipo 02</div>
+<div class="option" onclick="nextQuestion()">Tipo 03</div>
+<div class="option" onclick="nextQuestion()">Tipo 04</div>
+<div class="option" onclick="nextQuestion()">Tipo 05</div>
+<div class="option" onclick="nextQuestion()">Tipo 06</div>
+<div class="option" onclick="nextQuestion()">Tipo 07</div>
+
+</div>
+
+<!-- 19 -->
+
+<div class="question">
+
+<h1>
+Quando você faz dieta, o que acontece?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Emagreço fácil</div>
+<div class="option" onclick="nextQuestion()">Emagreço lentamente</div>
+<div class="option" onclick="nextQuestion()">Muita dificuldade</div>
+<div class="option" onclick="nextQuestion()">Nada funciona</div>
+
+</div>
+
+<!-- 20 -->
+
+<div class="question center">
+
+<div class="result-box">
+
+<div class="result-number">
+79%
+</div>
+
+<p>
+Salvando suas respostas até aqui...
+</p>
+
+</div>
+
+<p>
+Faltam só mais algumas perguntas para calcularmos sua idade metabólica.
+</p>
+
+<button class="btn pulse" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
+</div>
+
+<!-- 21 -->
+
+<div class="question">
+
+<h1>
+📋🌸 Me conta:
+</h1>
+
+<input class="input" placeholder="Seu nome">
+
+<input class="input" placeholder="Sua idade">
+
+<button class="btn" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
+</div>
+
+<!-- 22 -->
+
+<div class="question">
+
+<h1>
+Como fica sua energia quando faz dieta?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Alta energia</div>
+<div class="option" onclick="nextQuestion()">Energia razoável</div>
+<div class="option" onclick="nextQuestion()">Cansaço frequente</div>
+<div class="option" onclick="nextQuestion()">Exaustão crônica</div>
+
+</div>
+
+<!-- 23 -->
+
+<div class="question">
+
+<h1>
+Você sente sintomas hormonais?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Nenhum</div>
+<div class="option" onclick="nextQuestion()">1 ou 2 sintomas</div>
+<div class="option" onclick="nextQuestion()">3 ou 4 sintomas</div>
+<div class="option" onclick="nextQuestion()">Vários sintomas</div>
+
+</div>
+
+<!-- 24 -->
+
+<div class="question">
+
+<h1>
+Qual corpo mais se parece com o seu?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Tipo A</div>
+<div class="option" onclick="nextQuestion()">Tipo B</div>
+<div class="option" onclick="nextQuestion()">Tipo C</div>
+<div class="option" onclick="nextQuestion()">Tipo D</div>
+
+</div>
+
+<!-- 25 -->
+
+<div class="question">
+
+<h1>
+Como se sente no próprio corpo?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Me sinto bem</div>
+<div class="option" onclick="nextQuestion()">Poderia melhorar</div>
+<div class="option" onclick="nextQuestion()">Me sinto inchada</div>
+<div class="option" onclick="nextQuestion()">Me sinto velha</div>
+
+</div>
+
+<!-- 26 -->
+
+<div class="question">
+
+<h1>
+Quanto quer perder?
+</h1>
+
+<div class="option" onclick="nextQuestion()">Até 5kg</div>
+<div class="option" onclick="nextQuestion()">5kg a 10kg</div>
+<div class="option" onclick="nextQuestion()">11kg a 15kg</div>
+<div class="option" onclick="nextQuestion()">15kg a 20kg</div>
+
+</div>
+
+<!-- 27 -->
+
+<div class="question center">
+
+<h1>
+Sua meta é totalmente possível!
+</h1>
+
+<img
+class="before-after"
+src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
+>
+
+<button class="btn pulse" onclick="nextQuestion()">
+CONTINUAR
+</button>
+
+</div>
+
+<!-- LOADING -->
 
 <div class="loading" id="loading">
 
 <div class="spinner"></div>
 
-<h1>
-Analisando respostas...
+<h1 style="margin-top:25px;">
+Carregando diagnóstico...
 </h1>
 
 <p>
-Calculando sua idade metabólica feminina.
+Mais de 130 mil mulheres tiveram resultados incríveis.
 </p>
 
 </div>
+
+<!-- RESULTADO -->
 
 <div class="result" id="result">
 
 <div class="badge">
-RESULTADO FINAL
+DIAGNÓSTICO FINAL
 </div>
 
 <h1>
-Seu metabolismo aparenta estar mais envelhecido
+Sua idade metabólica é:
 </h1>
 
 <div class="result-box">
 
-<div class="result-number pulse">
-+12 anos
+<div class="result-number">
+46 anos
+</div>
+
+<div class="warning">
+⚠️ INTERVENÇÃO NECESSÁRIA
 </div>
 
 <p>
-Seu metabolismo aparenta estar mais lento do que o esperado para sua idade.
+Seu metabolismo está em alerta vermelho. Seu corpo apresenta sinais de inflamação e resistência metabólica.
 </p>
 
 </div>
 
 <p>
-Existe um protocolo alimentar feminino simples que pode ajudar você a acelerar seu metabolismo rapidamente.
+Você pode perder até <strong>5kg em 7 dias</strong> com o protocolo metabólico.
 </p>
+
+<img
+class="before-after"
+src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
+>
 
 <button
-class="btn cta pulse" onclick="window.location.href='https://pay.hotmart.com/E105942946Q?checkoutMode=10'"
+class="btn pulse"
+style="font-size:17px;padding:20px;"
+onclick="window.location.href='https://google.com'"
 >
-VER PROTOCOLO AGORA
+QUERO A INTERVENÇÃO DO JEJUM METABÓLICO
 </button>
 
 </div>
@@ -567,6 +986,7 @@ const percent =
 
 progress.style.width =
 percent + "%";
+
 }
 
 function nextQuestion(){
@@ -601,7 +1021,7 @@ document
 
 progress.style.width = "100%";
 
-},3500);
+},4000);
 
 }
 
